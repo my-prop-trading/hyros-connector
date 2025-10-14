@@ -29,12 +29,12 @@ impl HyrosApiClient {
             .send()
             .await
             .map_err(|e| e.to_string())?;
+        let status = res.status();
+        let body = res.text().await.unwrap_or_default();
 
-        if res.status().is_success() {
+        if status.is_success() && body.contains("OK") {
             Ok(())
         } else {
-            let status = res.status();
-            let body = res.text().await.unwrap_or_default();
             Err(format!("HTTP {}: {}", status, body))
         }
     }
