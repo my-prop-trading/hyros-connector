@@ -1,0 +1,15 @@
+[package]
+name = "hyros-connector"
+version = "0.1.0"
+edition = "2021"
+authors = ["Maxim Gorin <mxmgorin@gmail.com>"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+serde = "1.0.228"
+serde_json = "1.0.145"
+reqwest = "0.12.23"
+
+[dev-dependencies]
+tokio = { version = "*", features = ["full"] }
