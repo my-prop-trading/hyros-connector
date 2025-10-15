@@ -1,6 +1,6 @@
 use hyros_connector::{
     client::{HyrosApiClient, API_URL_PROD},
-    model::CreateOrderRequest,
+    model::{CreateOrderItem, CreateOrderRequest},
 };
 
 #[tokio::main]
@@ -15,7 +15,12 @@ async fn main() {
             email: "hyros-test-123435@mailinator.com",
             first_name: "test-first-name",
             last_name: "test-last-name",
-            items: vec![],
+            items: vec![CreateOrderItem {
+                name: "test",
+                external_id: "test-id",
+                price: 0.0,
+                item_discount: Some(1.0),
+            }],
             stage: None,
         })
         .await

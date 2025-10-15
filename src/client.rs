@@ -1,5 +1,5 @@
 use crate::model::CreateOrderRequest;
-use reqwest::header::{HeaderMap, HeaderName, HeaderValue};
+use reqwest::header::{HeaderMap, HeaderValue};
 
 pub const API_URL_PROD: &str = "https://api.hyros.com/v1/api/v1.0";
 
@@ -42,7 +42,7 @@ impl HyrosApiClient {
     fn build_headers(&self) -> HeaderMap {
         let mut headers = HeaderMap::new();
         headers.insert("Content-Type", HeaderValue::from_static("application/json"));
-        headers.insert(HeaderName::from_static("API-Key"), self.api_key.clone());
+        headers.insert("API-Key", self.api_key.clone());
 
         headers
     }
