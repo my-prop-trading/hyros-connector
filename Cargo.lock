@@ -608,7 +608,7 @@ dependencies = [
 
 [[package]]
 name = "hyros-connector"
-version = "0.1.2"
+version = "0.1.3"
 dependencies = [
  "flurl",
  "serde",

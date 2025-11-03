@@ -5,8 +5,8 @@ use hyros_connector::{
 
 #[tokio::main]
 async fn main() {
-    let api_key = std::env::var("HYROS_API_KEY").unwrap();
-    let client = HyrosApiClient::new(&api_key, API_URL_PROD);
+    // let api_key = std::env::var("HYROS_API_KEY").unwrap();
+    let client = HyrosApiClient::new("API_e5d31e85ad1c9b722d777ca9e2174718bbc67c56ff168c5fb2afc974eaf04b0b", API_URL_PROD);
 
     client
         .create_order(&CreateOrderRequest {
